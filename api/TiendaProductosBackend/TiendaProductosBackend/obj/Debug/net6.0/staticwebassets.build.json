@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "02D1Qw5I83cYFdFGVNifrBn+zKOiv+Q9Ubk43BzCtWI=",
+  "Source": "TiendaProductosBackend",
+  "BasePath": "_content/TiendaProductosBackend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
