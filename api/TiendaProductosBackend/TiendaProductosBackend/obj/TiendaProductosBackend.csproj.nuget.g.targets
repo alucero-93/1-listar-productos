@@ -3,6 +3,5 @@
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)microsoft.extensions.apidescription.server\6.0.5\build\Microsoft.Extensions.ApiDescription.Server.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.apidescription.server\6.0.5\build\Microsoft.Extensions.ApiDescription.Server.targets')" />
     <Import Project="$(NuGetPackageRoot)microsoft.bcl.asyncinterfaces\9.0.1\buildTransitive\netcoreapp2.0\Microsoft.Bcl.AsyncInterfaces.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.bcl.asyncinterfaces\9.0.1\buildTransitive\netcoreapp2.0\Microsoft.Bcl.AsyncInterfaces.targets')" />
-    <Import Project="$(NuGetPackageRoot)entityframework\6.5.1\buildTransitive\net6.0\EntityFramework.targets" Condition="Exists('$(NuGetPackageRoot)entityframework\6.5.1\buildTransitive\net6.0\EntityFramework.targets')" />
   </ImportGroup>
 </Project>

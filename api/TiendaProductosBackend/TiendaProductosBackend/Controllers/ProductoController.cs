@@ -1,4 +1,4 @@
-﻿using System.Data.Entity;
+﻿using Microsoft.EntityFrameworkCore; 
 using Microsoft.AspNetCore.Mvc;
 
 [Route("api/[controller]")]
