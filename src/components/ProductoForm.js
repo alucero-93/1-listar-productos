@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+
 function ProductoForm({ productId, onSave }) {
     const [producto, setProducto] = useState({
         nombre: '',
@@ -15,7 +16,7 @@ function ProductoForm({ productId, onSave }) {
     useEffect(() => {
         if (productId) {
             // Fetch the product to edit
-            axios.get(`https://localhost:5001/api/Producto/${productId}`)
+            axios.get(`https://localhost:7010/api/Producto/${productId}`)
                 .then(response => setProducto(response.data))
                 .catch(error => console.error('Error fetching product:', error));
         }
@@ -31,11 +32,11 @@ function ProductoForm({ productId, onSave }) {
         }
 
         if (productId) {
-            axios.put(`https://localhost:5001/api/Producto/${productId}`, producto)
+            axios.put(`https://localhost:7010/api/Producto/${productId}`, producto)
                 .then(response => onSave())
                 .catch(error => console.error('Error updating product:', error));
         } else {
-            axios.post('https://localhost:5001/api/Producto', producto)
+            axios.post('https://localhost:7010/api/Producto', producto)
                 .then(response => onSave())
                 .catch(error => console.error('Error creating product:', error));
         }

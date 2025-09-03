@@ -1,12 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-function Navbar({ isAuthenticated, isAdmin }) {
+function Navbar({ isAuthenticated, isAdmin, setIsAuthenticated }) {
+    const navigate = useNavigate();
+
+    // Función para manejar el logout
+    const handleLogout = () => {
+        // Eliminar el token de autenticación del localStorage si lo tienes
+        setIsAuthenticated(false); // Cambiar el estado de autenticación a 'false'
+        localStorage.removeItem('authToken'); // Elimina el token de localStorage
+        navigate('/Login'); // Redirige al login
+    };
+
     return (
         <nav>
             <ul>
                 <li>
-                    <Link to="/">Inicio</Link>
+                    <Link to="/productos">Inicio</Link>
                 </li>
                 {isAuthenticated && isAdmin && (
                     <>
@@ -18,8 +28,13 @@ function Navbar({ isAuthenticated, isAdmin }) {
                         </li>
                     </>
                 )}
+                {/* Si está autenticado, mostrar "Logout", si no, mostrar "Login" */}
                 <li>
-                    <Link to="/login">Login</Link>
+                    {isAuthenticated ? (
+                        <button onClick={handleLogout}>Logout</button> // Botón de logout
+                    ) : (
+                        <Link to="/Login">Login</Link> // Enlace de loginS
+                    )}
                 </li>
             </ul>
         </nav>

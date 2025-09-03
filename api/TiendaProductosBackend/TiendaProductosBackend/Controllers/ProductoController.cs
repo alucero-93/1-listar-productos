@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore; 
 using Microsoft.AspNetCore.Mvc;
-
 [Route("api/[controller]")]
 [ApiController]
 public class ProductoController : ControllerBase
@@ -80,5 +79,6 @@ public class ProductoController : ControllerBase
         _context.Productos.Remove(producto);
         await _context.SaveChangesAsync();
         return NoContent();
-    }
+    }   
+
 }

@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [TiendaProductos]    Script Date: 1/9/2025 21:22:32 ******/
+/****** Object:  Database [TiendaProductos]    Script Date: 3/9/2025 03:59:58 ******/
 CREATE DATABASE [TiendaProductos]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -82,7 +82,10 @@ ALTER DATABASE [TiendaProductos] SET QUERY_STORE = OFF
 GO
 USE [TiendaProductos]
 GO
-/****** Object:  Table [dbo].[Productos]    Script Date: 1/9/2025 21:22:32 ******/
+/****** Object:  User [TProductos]    Script Date: 3/9/2025 03:59:58 ******/
+CREATE USER [TProductos] FOR LOGIN [TProductos] WITH DEFAULT_SCHEMA=[dbo]
+GO
+/****** Object:  Table [dbo].[Productos]    Script Date: 3/9/2025 03:59:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -102,7 +105,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Roles]    Script Date: 1/9/2025 21:22:32 ******/
+/****** Object:  Table [dbo].[Roles]    Script Date: 3/9/2025 03:59:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -116,7 +119,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Usuarios]    Script Date: 1/9/2025 21:22:32 ******/
+/****** Object:  Table [dbo].[Usuarios]    Script Date: 3/9/2025 03:59:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -132,6 +135,14 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+SET IDENTITY_INSERT [dbo].[Productos] ON 
+GO
+INSERT [dbo].[Productos] ([Id], [Nombre], [Descripcion], [PrecioVenta], [Costo], [SKU], [Inventario], [Imagen]) VALUES (1, N'Papel Manila', N'Papel Manila Pliego', CAST(10.00 AS Decimal(10, 2)), CAST(5.50 AS Decimal(10, 2)), N'pplm1', 5, N'papelmanila.jpg')
+GO
+INSERT [dbo].[Productos] ([Id], [Nombre], [Descripcion], [PrecioVenta], [Costo], [SKU], [Inventario], [Imagen]) VALUES (2, N'Papel china', N'Papel china Pliego', CAST(7.00 AS Decimal(10, 2)), CAST(4.00 AS Decimal(10, 2)), N'pplch1', 2, N'')
+GO
+SET IDENTITY_INSERT [dbo].[Productos] OFF
+GO
 SET IDENTITY_INSERT [dbo].[Roles] ON 
 GO
 INSERT [dbo].[Roles] ([Id], [RoleName]) VALUES (1, N'Admin')
@@ -140,7 +151,15 @@ INSERT [dbo].[Roles] ([Id], [RoleName]) VALUES (2, N'User')
 GO
 SET IDENTITY_INSERT [dbo].[Roles] OFF
 GO
-/****** Object:  StoredProcedure [dbo].[CreateProducto]    Script Date: 1/9/2025 21:22:32 ******/
+SET IDENTITY_INSERT [dbo].[Usuarios] ON 
+GO
+INSERT [dbo].[Usuarios] ([Id], [Username], [PasswordHash], [Role]) VALUES (1, N'admin', N'admin', N'1')
+GO
+INSERT [dbo].[Usuarios] ([Id], [Username], [PasswordHash], [Role]) VALUES (2, N'usuario', N'admin', N'2')
+GO
+SET IDENTITY_INSERT [dbo].[Usuarios] OFF
+GO
+/****** Object:  StoredProcedure [dbo].[CreateProducto]    Script Date: 3/9/2025 03:59:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -168,7 +187,7 @@ BEGIN
     VALUES (@Nombre, @Descripcion, @PrecioVenta, @Costo, @SKU, @Inventario, @Imagen);
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[DeleteProducto]    Script Date: 1/9/2025 21:22:32 ******/
+/****** Object:  StoredProcedure [dbo].[DeleteProducto]    Script Date: 3/9/2025 03:59:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -190,7 +209,7 @@ BEGIN
     DELETE FROM Productos WHERE Id = @Id;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[EditProducto]    Script Date: 1/9/2025 21:22:32 ******/
+/****** Object:  StoredProcedure [dbo].[EditProducto]    Script Date: 3/9/2025 03:59:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -229,7 +248,7 @@ BEGIN
     WHERE Id = @Id;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[GetProductos]    Script Date: 1/9/2025 21:22:32 ******/
+/****** Object:  StoredProcedure [dbo].[GetProductos]    Script Date: 3/9/2025 03:59:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -239,6 +258,29 @@ AS
 BEGIN
     SELECT * FROM Productos WHERE Imagen IS NOT NULL;
 END;
+GO
+/****** Object:  StoredProcedure [dbo].[Login]    Script Date: 3/9/2025 03:59:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[Login]
+    @Username NVARCHAR(50),
+    @Password NVARCHAR(255) -- Contraseña en texto plano
+AS
+BEGIN
+    -- Validar si el usuario existe y la contraseña coincide directamente
+    SELECT 
+        u.Username,
+        r.RoleName AS Role -- Devolver el nombre del rol en lugar del ID
+    FROM 
+        Usuarios u
+    INNER JOIN 
+        Roles r ON u.Role = r.Id -- Relacionar con la tabla Roles usando el ID del rol
+    WHERE 
+        u.Username = @Username
+        AND u.PasswordHash = @Password;  -- Comparar directamente con la contraseña en texto plano
+END
 GO
 USE [master]
 GO

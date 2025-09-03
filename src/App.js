@@ -1,26 +1,28 @@
-import logo from './logo.svg';
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+// Solo importa useState, ya no es necesario importar React
+import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import AdminDashboard from './views/AdminDashboard';
-import ProductoList from './components/ProductoList.js';
+import ProductoList from './components/ProductoList';
 import Login from './views/Login';
 import './App.css';
 
-
 function App() {
-    const isAuthenticated = true; // Cambiar a estado real de autenticación
+    // Definir el estado de autenticación
+    const [isAuthenticated, setIsAuthenticated] = useState(true); // Aquí controlamos si el usuario está autenticado
     const isAdmin = true; // Cambiar según el rol del usuario
 
     return (
         <Router>
-            <Navbar isAuthenticated={isAuthenticated} isAdmin={isAdmin} />
+            {/* Navbar pasa los valores de autenticación y el setter para manejar el logout */}
+            <Navbar isAuthenticated={isAuthenticated} isAdmin={isAdmin} setIsAuthenticated={setIsAuthenticated} />
+
+            {/* Configuración de las rutas */}
             <Routes>
-                <Route path="/login" component={Login} />
-                <Route path="/admin" component={AdminDashboard} />
-                <Route path="/productos" component={ProductoList} />
-                <Route path="/" exact component={ProductoList} />
-                {/* aqui se pueden agregar mas rutas en caso sea necesario */}
+                <Route path="/Login" element={<Login />} />
+                <Route path="/admin" element={isAuthenticated ? <AdminDashboard /> : <Navigate to="/Login" />} />
+                <Route path="/productos" element={isAuthenticated ? <ProductoList /> : <Navigate to="/Login" />} />
+                <Route path="/" element={isAuthenticated ? <Navigate to="/productos" /> : <Navigate to="/Login" />} />
             </Routes>
         </Router>
     );
