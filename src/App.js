@@ -1,29 +1,46 @@
-// Solo importa useState, ya no es necesario importar React
 import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import AdminDashboard from './views/AdminDashboard';
 import ProductoList from './components/ProductoList';
 import Login from './views/Login';
 import './App.css';
 
-function App() {
-    // Definir el estado de autenticación
-    const [isAuthenticated, setIsAuthenticated] = useState(true); // Aquí controlamos si el usuario está autenticado
-    const isAdmin = true; // Cambiar según el rol del usuario
+// Componente auxiliar para usar hooks dentro del Router
+function AppContent({ isAuthenticated, isAdmin, setIsAuthenticated }) {
+    const location = useLocation();
+    const hideNavbar = location.pathname === '/Login';
 
     return (
-        <Router>
-            {/* Navbar pasa los valores de autenticación y el setter para manejar el logout */}
-            <Navbar isAuthenticated={isAuthenticated} isAdmin={isAdmin} setIsAuthenticated={setIsAuthenticated} />
-
-            {/* Configuración de las rutas */}
-            <Routes>
-                <Route path="/Login" element={<Login />} />
+        <>
+            {!hideNavbar && (
+                <Navbar
+                    isAuthenticated={isAuthenticated}
+                    isAdmin={isAdmin}
+                    setIsAuthenticated={setIsAuthenticated}
+                />
+            )}
+            <Routes>               
+                <Route path="/Login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
                 <Route path="/admin" element={isAuthenticated ? <AdminDashboard /> : <Navigate to="/Login" />} />
                 <Route path="/productos" element={isAuthenticated ? <ProductoList /> : <Navigate to="/Login" />} />
                 <Route path="/" element={isAuthenticated ? <Navigate to="/productos" /> : <Navigate to="/Login" />} />
             </Routes>
+        </>
+    );
+}
+
+function App() {
+    const [isAuthenticated, setIsAuthenticated] = useState(true);
+    const isAdmin = true;
+
+    return (
+        <Router>
+            <AppContent
+                isAuthenticated={isAuthenticated}
+                isAdmin={isAdmin}
+                setIsAuthenticated={setIsAuthenticated}
+            />
         </Router>
     );
 }

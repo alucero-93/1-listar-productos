@@ -14,15 +14,11 @@ function Navbar({ isAuthenticated, isAdmin, setIsAuthenticated }) {
 
     return (
         <nav>
-            <ul>
-                <li>
-                    <Link to="/productos">Inicio</Link>
-                </li>
+            <ul>                
                 {isAuthenticated && isAdmin && (
-                    <>
-                        <li>
+                    <>  <li>
                             <Link to="/admin">Panel de Administrador</Link>
-                        </li>
+                        </li>                      
                         <li>
                             <Link to="/productos">Productos</Link>
                         </li>

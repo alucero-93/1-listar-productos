@@ -83,6 +83,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ProductoController",
+    "Method": "Login",
+    "RelativePath": "api/Producto/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginRequest",
+        "Type": "LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "TiendaProductosBackend.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",

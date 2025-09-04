@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Proyectos\\PruebaCemaco2025\\1-listar-productos\\api\\TiendaProductosBackend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9108E5C0-83CB-4906-9AF4-FA268EADF481}|TiendaProductosBackend\\TiendaProductosBackend.csproj|c:\\proyectos\\pruebacemaco2025\\1-listar-productos\\api\\tiendaproductosbackend\\tiendaproductosbackend\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9108E5C0-83CB-4906-9AF4-FA268EADF481}|TiendaProductosBackend\\TiendaProductosBackend.csproj|solutionrelative:tiendaproductosbackend\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9108E5C0-83CB-4906-9AF4-FA268EADF481}|TiendaProductosBackend\\TiendaProductosBackend.csproj|c:\\proyectos\\pruebacemaco2025\\1-listar-productos\\api\\tiendaproductosbackend\\tiendaproductosbackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9108E5C0-83CB-4906-9AF4-FA268EADF481}|TiendaProductosBackend\\TiendaProductosBackend.csproj|solutionrelative:tiendaproductosbackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9108E5C0-83CB-4906-9AF4-FA268EADF481}|TiendaProductosBackend\\TiendaProductosBackend.csproj|c:\\proyectos\\pruebacemaco2025\\1-listar-productos\\api\\tiendaproductosbackend\\tiendaproductosbackend\\models\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9108E5C0-83CB-4906-9AF4-FA268EADF481}|TiendaProductosBackend\\TiendaProductosBackend.csproj|solutionrelative:tiendaproductosbackend\\models\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9108E5C0-83CB-4906-9AF4-FA268EADF481}|TiendaProductosBackend\\TiendaProductosBackend.csproj|c:\\proyectos\\pruebacemaco2025\\1-listar-productos\\api\\tiendaproductosbackend\\tiendaproductosbackend\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9108E5C0-83CB-4906-9AF4-FA268EADF481}|TiendaProductosBackend\\TiendaProductosBackend.csproj|solutionrelative:tiendaproductosbackend\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9108E5C0-83CB-4906-9AF4-FA268EADF481}|TiendaProductosBackend\\TiendaProductosBackend.csproj|c:\\proyectos\\pruebacemaco2025\\1-listar-productos\\api\\tiendaproductosbackend\\tiendaproductosbackend\\models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9108E5C0-83CB-4906-9AF4-FA268EADF481}|TiendaProductosBackend\\TiendaProductosBackend.csproj|solutionrelative:tiendaproductosbackend\\models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9108E5C0-83CB-4906-9AF4-FA268EADF481}|TiendaProductosBackend\\TiendaProductosBackend.csproj|c:\\proyectos\\pruebacemaco2025\\1-listar-productos\\api\\tiendaproductosbackend\\tiendaproductosbackend\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9108E5C0-83CB-4906-9AF4-FA268EADF481}|TiendaProductosBackend\\TiendaProductosBackend.csproj|solutionrelative:tiendaproductosbackend\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9108E5C0-83CB-4906-9AF4-FA268EADF481}|TiendaProductosBackend\\TiendaProductosBackend.csproj|c:\\proyectos\\pruebacemaco2025\\1-listar-productos\\api\\tiendaproductosbackend\\tiendaproductosbackend\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9108E5C0-83CB-4906-9AF4-FA268EADF481}|TiendaProductosBackend\\TiendaProductosBackend.csproj|solutionrelative:tiendaproductosbackend\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,19 +26,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Producto.cs",
-              "DocumentMoniker": "C:\\Proyectos\\PruebaCemaco2025\\1-listar-productos\\api\\TiendaProductosBackend\\TiendaProductosBackend\\Models\\Producto.cs",
-              "RelativeDocumentMoniker": "TiendaProductosBackend\\Models\\Producto.cs",
-              "ToolTip": "C:\\Proyectos\\PruebaCemaco2025\\1-listar-productos\\api\\TiendaProductosBackend\\TiendaProductosBackend\\Models\\Producto.cs",
-              "RelativeToolTip": "TiendaProductosBackend\\Models\\Producto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Proyectos\\PruebaCemaco2025\\1-listar-productos\\api\\TiendaProductosBackend\\TiendaProductosBackend\\Program.cs",
+              "RelativeDocumentMoniker": "TiendaProductosBackend\\Program.cs",
+              "ToolTip": "C:\\Proyectos\\PruebaCemaco2025\\1-listar-productos\\api\\TiendaProductosBackend\\TiendaProductosBackend\\Program.cs*",
+              "RelativeToolTip": "TiendaProductosBackend\\Program.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:51:39.89Z",
+              "WhenOpened": "2025-09-04T08:51:03.8Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductoController.cs",
+              "DocumentMoniker": "C:\\Proyectos\\PruebaCemaco2025\\1-listar-productos\\api\\TiendaProductosBackend\\TiendaProductosBackend\\Controllers\\ProductoController.cs",
+              "RelativeDocumentMoniker": "TiendaProductosBackend\\Controllers\\ProductoController.cs",
+              "ToolTip": "C:\\Proyectos\\PruebaCemaco2025\\1-listar-productos\\api\\TiendaProductosBackend\\TiendaProductosBackend\\Controllers\\ProductoController.cs",
+              "RelativeToolTip": "TiendaProductosBackend\\Controllers\\ProductoController.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAowFAAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T08:32:23.032Z",
               "EditorCaption": ""
             },
             {
@@ -49,35 +62,22 @@
               "RelativeDocumentMoniker": "TiendaProductosBackend\\Models\\LoginRequest.cs",
               "ToolTip": "C:\\Proyectos\\PruebaCemaco2025\\1-listar-productos\\api\\TiendaProductosBackend\\TiendaProductosBackend\\Models\\LoginRequest.cs",
               "RelativeToolTip": "TiendaProductosBackend\\Models\\LoginRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAMAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:51:33.65Z",
+              "WhenOpened": "2025-09-04T08:32:17.856Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Proyectos\\PruebaCemaco2025\\1-listar-productos\\api\\TiendaProductosBackend\\TiendaProductosBackend\\Models\\Usuario.cs",
-              "RelativeDocumentMoniker": "TiendaProductosBackend\\Models\\Usuario.cs",
-              "ToolTip": "C:\\Proyectos\\PruebaCemaco2025\\1-listar-productos\\api\\TiendaProductosBackend\\TiendaProductosBackend\\Models\\Usuario.cs",
-              "RelativeToolTip": "TiendaProductosBackend\\Models\\Usuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAAAAAAAAAAAAAAAAA==",
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Proyectos\\PruebaCemaco2025\\1-listar-productos\\api\\TiendaProductosBackend\\TiendaProductosBackend\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "TiendaProductosBackend\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Proyectos\\PruebaCemaco2025\\1-listar-productos\\api\\TiendaProductosBackend\\TiendaProductosBackend\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "TiendaProductosBackend\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:49:47.123Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ProductoController.cs",
-              "DocumentMoniker": "C:\\Proyectos\\PruebaCemaco2025\\1-listar-productos\\api\\TiendaProductosBackend\\TiendaProductosBackend\\Controllers\\ProductoController.cs",
-              "RelativeDocumentMoniker": "TiendaProductosBackend\\Controllers\\ProductoController.cs",
-              "ToolTip": "C:\\Proyectos\\PruebaCemaco2025\\1-listar-productos\\api\\TiendaProductosBackend\\TiendaProductosBackend\\Controllers\\ProductoController.cs",
-              "RelativeToolTip": "TiendaProductosBackend\\Controllers\\ProductoController.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAqwFIAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:41:45.145Z",
+              "WhenOpened": "2025-09-04T08:32:11.228Z",
               "EditorCaption": ""
             }
           ]

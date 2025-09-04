@@ -79,6 +79,21 @@ public class ProductoController : ControllerBase
         _context.Productos.Remove(producto);
         await _context.SaveChangesAsync();
         return NoContent();
-    }   
+    }
+
+    // Login: api/login/
+    [HttpPost("login")]
+    public async Task<IActionResult> Login([FromBody] LoginRequest loginRequest)
+    {
+        var usuario = await _context.Usuarios
+            .FirstOrDefaultAsync(u => u.Username == loginRequest.Username && u.PasswordHash == loginRequest.Password);
+
+        if (usuario == null)
+        {
+            return Unauthorized("Usuario o contraseña incorrectos");
+        }
+
+        return Ok(new { message = "Login exitoso", usuario.Id, usuario.Username, usuario.Role });
+    }
 
 }
